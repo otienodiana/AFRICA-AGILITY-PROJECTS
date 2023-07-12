@@ -1,24 +1,28 @@
 const express =require('express')
 const app = express()
 
+app.set("view engine", "ejs")
+
+app.use(express.static('public'))
+
 const PORT = 5000
 
 app.get('/home',(req,res) =>{
-    res.send("home")
+    res.render("home")
 })
 
 app.get('/home',(req,res) =>{
-    res.send("home")
+    res.render("home")
 })
 
 app.get('/about',(req,res) =>{
-    res.send("about")
+    res.render("about")
 })
 
-app.get('/contact me',(req,res) =>{
-    res.send("contact me")
+app.get('/contacts',(req,res) =>{
+    res.render("contacts")
 })
 
 app.listen(PORT,() =>{
-    console.log('My app is running successfully')
+    console.log('My app is running successfully $(PORT)')
 })
